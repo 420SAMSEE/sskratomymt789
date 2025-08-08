@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const expenseOut = document.getElementById('expense');
 
   const balanceOut = document.getElementById('balance');
-  const form = document.getElementById('saleForm');
+  const form = document.getElementById('salesForm');
   const msg = document.getElementById('msg');
   const dateInput = document.getElementById('date');
 
