@@ -1,0 +1,88 @@
+:root{
+  --primary-color:#2E7D32;
+  --primary-light:#4CAF50;
+  --primary-lighter:#81C784;
+  --primary-dark:#1B5E20;
+  --accent-color:#8BC34A;
+  --background:#F1F8E9;
+  --card-bg:rgba(255,255,255,0.95);
+  --text-dark:#263238;
+  --text-medium:#455A64;
+  --text-light:#607D8B;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md:0 4px 6px rgba(0,0,0,0.1);
+  --border-radius:12px;
+  --transition:all .25s ease;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Kanit',sans-serif;
+  background:var(--background);
+  color:var(--text-dark);
+  line-height:1.5;
+  padding:20px;
+  min-height:100vh;
+}
+.app-container{max-width:920px;margin:0 auto}
+.app-header{text-align:center;margin-bottom:18px;color:var(--primary-dark)}
+.app-header h1{font-size:1.8rem;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:600}
+.app-header .version{font-size:0.9rem;color:var(--text-medium);margin-left:6px}
+
+/* TAB */
+.tab-menu{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tab-btn{
+  padding:10px 14px;border-radius:10px;border:none;background:transparent;cursor:pointer;color:var(--text-medium);
+  font-weight:500;transition:var(--transition)
+}
+.tab-btn.active{background:rgba(76,175,80,0.14);color:var(--primary-dark);box-shadow:var(--shadow-sm)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* cards */
+.form-card{background:var(--card-bg);border-radius:var(--border-radius);box-shadow:var(--shadow-sm);padding:18px;margin-bottom:16px;border-top:3px solid var(--primary-light)}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;color:var(--primary-dark)}
+.card-header h2{font-size:1.15rem}
+
+/* grid form */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.form-group{display:flex;flex-direction:column}
+.label-title{font-weight:500;color:var(--text-medium);margin-bottom:6px}
+.form-group input{padding:12px;border:1px solid #e0e0e0;border-radius:8px;font-size:1rem;background:#fff}
+.form-group input:focus{outline:none;box-shadow:0 0 0 3px rgba(76,175,80,0.12);border-color:var(--primary-light)}
+
+.output-box{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:8px;background:rgba(255,255,255,0.9);box-shadow:var(--shadow-sm);font-weight:600}
+.output-box.revenue{border-left:4px solid #388E3C;color:#388E3C}
+.output-box.expense{border-left:4px solid #F57C00;color:#F57C00}
+.output-box.balance{border-left:4px solid var(--primary-color);color:var(--primary-color);font-size:1.1rem}
+
+.submit-btn{width:100%;padding:12px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--primary-light),var(--primary-dark));color:#fff;font-weight:600;cursor:pointer;margin-top:12px;box-shadow:var(--shadow-sm)}
+
+.action-buttons{display:flex;gap:12px;margin-bottom:12px}
+.action-btn{flex:1;padding:10px;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.sheet-btn{background:#fff;border:1px solid #e0e0e0}
+.report-btn{background:var(--accent-color);color:#fff}
+
+.msg-box{margin-top:12px;padding:10px;border-radius:8px;text-align:center;background:rgba(255,255,255,0.9)}
+.msg-box.success{background:rgba(56,142,60,0.08);color:#388E3C}
+.msg-box.error{background:rgba(211,47,47,0.06);color:#D32F2F}
+.msg-box.loading{background:rgba(251,192,45,0.06);color:#F57C00}
+
+/* material calculator */
+.material-calculator{padding:16px}
+.input-group{margin-bottom:12px}
+.calc-buttons{display:flex;gap:10px;margin-top:6px}
+.calc-btn{flex:1;padding:10px;border-radius:8px;border:none;background:var(--primary-light);color:#fff;cursor:pointer}
+.calc-btn.reset{background:#f5f5f5;color:var(--text-medium)}
+
+/* result table */
+.result-table{width:100%;border-collapse:collapse;margin-top:10px}
+.result-table th, .result-table td{padding:10px;border-bottom:1px solid #eaeaea;text-align:left}
+.result-table th{background:var(--primary-light);color:#fff}
+
+/* responsive */
+@media (max-width:760px){
+  .form-grid{grid-template-columns:1fr}
+  .tab-menu{gap:6px}
+}
+.muted{color:var(--text-medium);font-size:0.95rem;margin-bottom:8px}
